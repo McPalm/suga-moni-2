@@ -37,6 +37,7 @@ public class KillPlayer : MonoBehaviour
     {
         lockout = true;
 
+
         OnKill?.Invoke();
         KillParticles.transform.position = transform.position;
         KillParticles.Play();
@@ -44,6 +45,11 @@ public class KillPlayer : MonoBehaviour
         ren.enabled = false;
         var mob = GetComponent<Mobile>();
         mob.enabled = false;
+
+        ScreenShake.Shake(1f);
+        ScreenShake.Quake(1f);
+        ScreenShake.Instance.StartWobble(new Vector2(mob.HMomentum, mob.VMomentum).normalized * .03f);
+
         yield return new WaitForSeconds(.5f);
 
         FindObjectOfType<Stage>().ResetStage();

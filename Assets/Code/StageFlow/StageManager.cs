@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
-    public string[] Stages;
-
-
     public Transform CameraContainer;
 
+
+    public StageData[] Stages;
     Stage current;
     public StageData StartStage;
 
@@ -18,9 +18,10 @@ public class StageManager : MonoBehaviour
     void Start()
     {
         FindObjectOfType<KillPlayer>().OnReset += StageManager_OnReset;
-        foreach(string stage in Stages)
+        foreach (var stage in Stages)
         {
-            SceneManager.LoadScene(stage, LoadSceneMode.Additive);
+            stage.Load();
+            // SceneManager.LoadScene(stage, LoadSceneMode.Additive);
         }
     }
 
