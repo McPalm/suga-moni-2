@@ -5455,6 +5455,24 @@ Transform:
   m_Father: {fileID: 206065227}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1012660510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5005882879425890225, guid: 191538ac7961e5c459379e0361596430, type: 3}
+  m_PrefabInstance: {fileID: 5005882878423445507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1012660511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012660510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677f8792545c9b54b9eb9a4928e89b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectRef: {fileID: 11400000, guid: 6416af6ad9efb97469f9065596036ebc, type: 2}
 --- !u!1 &1207494114
 GameObject:
   m_ObjectHideFlags: 0
@@ -5718,21 +5736,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SugaMoni_0
       objectReference: {fileID: 0}
-    - target: {fileID: 5005882879425890228, guid: 191538ac7961e5c459379e0361596430, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 5005882879425890230, guid: 191538ac7961e5c459379e0361596430, type: 3}
-      propertyPath: Properties
-      value: 
-      objectReference: {fileID: 11400000, guid: f48017fc545e2934ca188fc328162d56, type: 2}
+      propertyPath: Player.m_Bits
+      value: 5120
+      objectReference: {fileID: 0}
     - target: {fileID: 5005882879425890235, guid: 191538ac7961e5c459379e0361596430, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.92
+      value: 50.81
       objectReference: {fileID: 0}
     - target: {fileID: 5005882879425890235, guid: 191538ac7961e5c459379e0361596430, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.69
+      value: 13.73
       objectReference: {fileID: 0}
     - target: {fileID: 5005882879425890235, guid: 191538ac7961e5c459379e0361596430, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5770,9 +5784,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6271311796351267847, guid: 191538ac7961e5c459379e0361596430, type: 3}
-      propertyPath: JumpSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 524f416748bc90a44b02e88b3080e973, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 191538ac7961e5c459379e0361596430, type: 3}

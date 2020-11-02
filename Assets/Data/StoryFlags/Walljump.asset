@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Walljump
   m_EditorClassIdentifier: 
   PlatformingCharacterProperties: {fileID: 11400000, guid: 8efc507d9637e114b9981cc1b254915b, type: 2}
+  PlayerRefference: {fileID: 11400000, guid: 6416af6ad9efb97469f9065596036ebc, type: 2}

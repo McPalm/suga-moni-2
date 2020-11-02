@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bef5cee25e455dc45b8e7e2c9badfdf9, type: 3}
-  m_Name: WallDestroyed
+  m_Script: {fileID: 11500000, guid: 995c3cc57bee862428b663e185d9da05, type: 3}
+  m_Name: PlayerRefference
   m_EditorClassIdentifier: 
-  PlatformingCharacterProperties: {fileID: 0}
-  PlayerRefference: {fileID: 11400000, guid: 6416af6ad9efb97469f9065596036ebc, type: 2}
+  GameObject: {fileID: 0}

@@ -9763,7 +9763,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -8847083059210646337, guid: e5e0b7a40bb8dde4f965b1a7c8951268, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9809,7 +9809,7 @@ MonoBehaviour:
   Properties: {fileID: 11400000, guid: f48017fc545e2934ca188fc328162d56, type: 2}
   Player:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   lowStamina: 0
 --- !u!114 &5005882879425890231
 MonoBehaviour:
@@ -9957,7 +9957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 7045564318813424339}
-  JumpSound: {fileID: 0}
+  JumpSound: {fileID: 8300000, guid: 524f416748bc90a44b02e88b3080e973, type: 3}
   JumpParticles: {fileID: 6225887979192834197}
   RunParticles: {fileID: 2746286838591381427}
 --- !u!114 &2092988347

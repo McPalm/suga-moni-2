@@ -25,5 +25,10 @@ public class Stage : MonoBehaviour
                     director.Play();
             }
         }
+
+        foreach(var reset in GetComponentsInChildren<IOnStageReset>(true))
+        {
+            reset.OnStageReset();
+        }
     }
 }

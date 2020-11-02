@@ -10,14 +10,14 @@ public class StoryFlag : ScriptableObject
     public bool IsActive;
 
     public PlatformingCharacterProperties PlatformingCharacterProperties;
-
+    public ObjectRef PlayerRefference;
 
     public void Activate()
     {
         IsActive = true;
 
         if (PlatformingCharacterProperties != null)
-            FindObjectOfType<PlatformingCharacter>().Properties = PlatformingCharacterProperties;
+            PlayerRefference.GameObject.GetComponent<PlatformingCharacter>().Properties = PlatformingCharacterProperties;
     }
 
 }

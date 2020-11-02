@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 67600cf614177744d85cdc0434858df6
+guid: b4c79053e6791ca478645c218d93e445
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7474296138308576479
-    second: MiscObjects_0
+      213: -9122695006515159614
+    second: Pig_0
   - first:
-      213: 2470101840638216232
-    second: MiscObjects_1
+      213: 3283728978217524802
+    second: Pig_1
   - first:
-      213: 2642606311301418485
-    second: MiscObjects_2
-  - first:
-      213: -3570560840723445889
-    second: MiscObjects_3
-  - first:
-      213: 2638440636149073943
-    second: MiscObjects_4
+      213: -7153539333839050252
+    second: Pig_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -116,116 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MiscObjects_0
+      name: Pig_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 114
-        width: 12
-        height: 12
+        x: 0
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12b1b024347f54890800000000000000
-      internalID: -7474296138308576479
+      spriteID: 2cd1f66c93da56180800000000000000
+      internalID: -9122695006515159614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiscObjects_1
+      name: Pig_1
       rect:
         serializedVersion: 2
         x: 16
         y: 112
-        width: 21
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.3809524, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82887427980974220800000000000000
-      internalID: 2470101840638216232
+      spriteID: 24edf459b16229d20800000000000000
+      internalID: 3283728978217524802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiscObjects_2
+      name: Pig_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 112
         width: 16
-        height: 15
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4666667}
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fd8352607c6ca420800000000000000
-      internalID: 2642606311301418485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiscObjects_3
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 78
-        width: 41
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: 13.5, y: 3}
-        - {x: 13.5, y: -5}
-        - {x: 13.5, y: -9}
-        - {x: -12.5, y: -9}
-        - {x: -12.5, y: -5}
-        - {x: -12.5, y: 3}
-        - {x: -20.5, y: 7}
-        - {x: -20.5, y: 9}
-        - {x: 20.5, y: 9}
-        - {x: 20.5, y: 5}
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7742cf35d1d27ec0800000000000000
-      internalID: -3570560840723445889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiscObjects_4
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 97
-        width: 41
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7180f9e87cf9d9420800000000000000
-      internalID: 2638440636149073943
+      spriteID: 4f92dbf70e589bc90800000000000000
+      internalID: -7153539333839050252
       vertices: []
       indices: 
       edges: []
