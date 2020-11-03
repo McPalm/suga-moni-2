@@ -8,7 +8,7 @@ public class DebugUnlocker : MonoBehaviour
 
 #if UNITY_EDITOR
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         foreach(var flag in StartUnlocked)
         {

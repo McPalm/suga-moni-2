@@ -7,6 +7,7 @@ public class PlatformingAnimator : MonoBehaviour
     public Animator Animator;
     PlatformingCharacter Character { get; set; }
     public AudioClip JumpSound;
+    public AudioClip walkSound;
     float fallDuration = 0f;
 
     public ParticleSystem JumpParticles;
@@ -35,7 +36,12 @@ public class PlatformingAnimator : MonoBehaviour
 
     public void WalkSound()
     {
-        //AudioPool.PlaySound(transform.position, JumpSound, Random.value * .1f + .1f, pitch: .9f + Random.value* .2f);
+        if(Character.Grounded)
+        {
+            var speed = Mathf.Abs(Character.Speed) * .025f;
+            speed = speed < .07f ? speed : .07f;
+            AudioPool.PlaySound(transform.position, walkSound, volume: Random.value * speed + speed, pitch: .8f + Random.value* .4f);
+        }
     }
 
     private void PlatformingCharacter_OnJump()

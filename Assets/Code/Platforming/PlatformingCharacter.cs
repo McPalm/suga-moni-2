@@ -15,6 +15,7 @@ public class PlatformingCharacter : Mobile, IInputReader
     public event System.Action OnJump;
     public event System.Action OnWallJump;
     public event System.Action<PlatformingCharacter> OnStomp;
+    public event System.Action<PlatformingCharacter> OnStomped;
     public bool Climbing { get; set; }
     int ForceJumpFrames = 0;
     Vector2 ForceMove;
@@ -222,6 +223,8 @@ public class PlatformingCharacter : Mobile, IInputReader
                         var other = hit.transform.GetComponent<PlatformingCharacter>();
                         other.VMomentum = Mathf.Min(VMomentum - Properties.HeadBonkForce, -Properties.HeadBonkForce);
                         OnStomp?.Invoke(other);
+                        StartCoroutine(Freeze(.06f));
+                        other.OnStomped?.Invoke(this);
                         break;
                     }
                 }
@@ -294,5 +297,12 @@ public class PlatformingCharacter : Mobile, IInputReader
         public Vector2 momentum;
         public int cyoteTime;
         public Vector2 position;
+    }
+
+    public IEnumerator Freeze(float duration)
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = 1f;
     }
 }

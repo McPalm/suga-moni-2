@@ -9958,6 +9958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 7045564318813424339}
   JumpSound: {fileID: 8300000, guid: 524f416748bc90a44b02e88b3080e973, type: 3}
+  walkSound: {fileID: 8300000, guid: 25a9d67f16503c94ab9ffeb2bf0a3fee, type: 3}
   JumpParticles: {fileID: 6225887979192834197}
   RunParticles: {fileID: 2746286838591381427}
 --- !u!114 &2092988347
@@ -9974,6 +9975,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockout: 0
   KillParticles: {fileID: 0}
+  DeathSounds:
+  - {fileID: 8300000, guid: b5f8e7d8e7eddb14d82d97ae709b613e, type: 3}
+  - {fileID: 8300000, guid: 7cc2dec3858da554fbc0b3bbd4f315af, type: 3}
+  - {fileID: 8300000, guid: bbada0c90e6fca544a5af87fe18dcfb4, type: 3}
 --- !u!58 &7245854990005008299
 CircleCollider2D:
   m_ObjectHideFlags: 0

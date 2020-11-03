@@ -5,6 +5,8 @@ using UnityEngine;
 public class FlagPickup : MonoBehaviour
 {
     public StoryFlag storyFlag;
+    public AudioClip audioClip;
+    public event System.Action OnTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class FlagPickup : MonoBehaviour
     public void Trigger()
     {
         storyFlag.Activate();
+        OnTrigger?.Invoke();
         Destroy(gameObject);
+        this.Noise(audioClip);
     }
 }

@@ -165,7 +165,7 @@ Transform:
   m_Children:
   - {fileID: 1125763456}
   m_Father: {fileID: 1385212203}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125763455
 GameObject:
@@ -6856,7 +6856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1385212203}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1237953169
 MonoBehaviour:
@@ -6937,12 +6937,13 @@ Transform:
   m_LocalPosition: {x: -72, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1810220492}
   - {fileID: 2107528585}
   - {fileID: 1071257546}
   - {fileID: 1853583038}
   - {fileID: 1237953168}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1810220488
 GameObject:
@@ -6956,6 +6957,7 @@ GameObject:
   - component: {fileID: 1810220491}
   - component: {fileID: 1810220490}
   - component: {fileID: 1810220489}
+  - component: {fileID: 1810220493}
   m_Layer: 9
   m_Name: Walljump Pickup
   m_TagString: Untagged
@@ -7002,6 +7004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyFlag: {fileID: 11400000, guid: 9f1a64c59a9b61244a3f4b963d769f66, type: 2}
+  audioClip: {fileID: 8300000, guid: 59824f7024a233540a2fb637b2493571, type: 3}
 --- !u!212 &1810220491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7060,13 +7063,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810220488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -81.04, y: -6.28, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.040001, y: -6.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1385212203}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810220493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810220488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b2a0f2cbf4a004f89edf740b5fd310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Walljump Unlocked!
+
+    You can now jump while netx to a wall, even if not
+    standing on the ground!'
 --- !u!1 &1853583035
 GameObject:
   m_ObjectHideFlags: 0
@@ -7135,7 +7154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1385212203}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2107528585 stripped
 Transform:
@@ -7183,7 +7202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7925319189502023916, guid: 2f88f9991eb92554d8017739fa229126, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925319189502023916, guid: 2f88f9991eb92554d8017739fa229126, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

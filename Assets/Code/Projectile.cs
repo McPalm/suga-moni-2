@@ -50,7 +50,6 @@ public class Projectile : MonoBehaviour
 
     bool OnCamera()
     {
-        var delta = transform.position;
-        return delta.sqrMagnitude < 10000;
+        return transform.OnCamera(40f);
     }
 }

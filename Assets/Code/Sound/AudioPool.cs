@@ -34,5 +34,15 @@ public class AudioPool : ObjectPool
         }
     }
     internal static void PlaySoundLowpass(Vector3 position, AudioClip clip, float volume, int frequency) => _instance.IPlaySound(position, clip, volume, 1f, frequency);
+
+
+    
 }
 
+static public class AudioPoolUtility
+{
+    static public void Noise(this Component component, AudioClip clip, float volume = 1f, float pitch = 1f)
+    {
+        AudioPool.PlaySound(component.transform.position, clip, volume, pitch);
+    }
+}

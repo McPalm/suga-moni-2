@@ -13,6 +13,8 @@ public class KillPlayer : MonoBehaviour
     public event System.Action OnReset;
     public event System.Action OnKill;
 
+    public AudioClip[] DeathSounds;
+
     Mobile Mobile;
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,15 @@ public class KillPlayer : MonoBehaviour
         ren.enabled = false;
         var mob = GetComponent<Mobile>();
         mob.enabled = false;
+
+        if(DeathSounds.Length > 0)
+        {
+            AudioPool.PlaySound(transform.position, DeathSounds[Random.Range(0, DeathSounds.Length)], pitch: Random.value * .7f + .3f);
+        }
+
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(.1f);
+        Time.timeScale = 1f;
 
         ScreenShake.Shake(1f);
         ScreenShake.Quake(1f);

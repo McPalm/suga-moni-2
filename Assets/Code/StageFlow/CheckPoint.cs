@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-
     static CheckPoint lastCP;
+
+    public AudioClip audioClip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,9 @@ public class CheckPoint : MonoBehaviour
 
     public void ActivateCP()
     {
+        if (lastCP == this)
+            return;
+        AudioPool.PlaySound(transform.position, audioClip);
         lastCP?.DeactivateCP();
         lastCP = this;
         GetComponent<Animator>().SetBool("On", true);
