@@ -6027,7 +6027,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9afc54ddde218494a80bcc9fb02e87c9, type: 2}
   - {fileID: 11400000, guid: 68272f6ebc1650d4a941eedf85d33a03, type: 2}
   - {fileID: 11400000, guid: 11268118dd2a3144582151d1476da4eb, type: 2}
-  StartStage: {fileID: 0}
+  - {fileID: 11400000, guid: 07f71e08bef688b43a6023ab88edd45e, type: 2}
+  - {fileID: 11400000, guid: ca03fc9279a07ca4492284662a941611, type: 2}
+  - {fileID: 11400000, guid: 48f07f0cae40c0548b7636a00adf94f3, type: 2}
+  StartStage: {fileID: 11400000, guid: a0c9d4e7e86feea4993167ae75186c69, type: 2}
 --- !u!4 &1671343411
 Transform:
   m_ObjectHideFlags: 0
@@ -6061,13 +6064,17 @@ PrefabInstance:
       propertyPath: Player.m_Bits
       value: 5120
       objectReference: {fileID: 0}
+    - target: {fileID: 5005882879425890230, guid: 191538ac7961e5c459379e0361596430, type: 3}
+      propertyPath: Properties
+      value: 
+      objectReference: {fileID: 11400000, guid: 8efc507d9637e114b9981cc1b254915b, type: 2}
     - target: {fileID: 5005882879425890235, guid: 191538ac7961e5c459379e0361596430, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 128.91
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5005882879425890235, guid: 191538ac7961e5c459379e0361596430, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.02
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5005882879425890235, guid: 191538ac7961e5c459379e0361596430, type: 3}
       propertyPath: m_LocalPosition.z

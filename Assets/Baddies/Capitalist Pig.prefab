@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnAtLedges: 1
   KillParticles: {fileID: 9003474538379120492}
+  KillSound: {fileID: 8300000, guid: 655115f89cfd64a4c86bc486bc6dc699, type: 3}
 --- !u!114 &7069334208120612021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6629271100136454771}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -2.7621155, y: 9.901009, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1794770358684135927}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1955f0f33cf4a4a82bce8c67354d08, type: 3}
+  m_Name: 8_kaizo
+  m_EditorClassIdentifier: 
+  Scene: 8_simplekaizo
+  nearbyStages:
+  - {fileID: 11400000, guid: 48f07f0cae40c0548b7636a00adf94f3, type: 2}
+  - {fileID: 11400000, guid: 07f71e08bef688b43a6023ab88edd45e, type: 2}

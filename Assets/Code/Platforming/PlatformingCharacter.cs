@@ -106,7 +106,7 @@ public class PlatformingCharacter : Mobile, IInputReader
 
         // horiontal movement
         var desiredSpeed = x * Properties.MaxSpeed;
-        var accelMultipler = desiredSpeed == 0f && !Grounded ? .1f : 1f; // keep momentum in air if stick is neutral.
+        var accelMultipler = 1f; //desiredSpeed == 0f && !Grounded ? .1f : 1f; // keep momentum in air if stick is neutral.
         accelMultipler *= Friction;
         if(lowStamina)
         {
@@ -223,7 +223,8 @@ public class PlatformingCharacter : Mobile, IInputReader
                         var other = hit.transform.GetComponent<PlatformingCharacter>();
                         other.VMomentum = Mathf.Min(VMomentum - Properties.HeadBonkForce, -Properties.HeadBonkForce);
                         OnStomp?.Invoke(other);
-                        StartCoroutine(Freeze(.06f));
+                        ForceJumpFrames = 8;
+                        StartCoroutine(Freeze(.075f));
                         other.OnStomped?.Invoke(this);
                         break;
                     }
