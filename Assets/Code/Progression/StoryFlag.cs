@@ -11,6 +11,7 @@ public class StoryFlag : ScriptableObject
 
     public PlatformingCharacterProperties PlatformingCharacterProperties;
     public ObjectRef PlayerRefference;
+    public bool unlockDoubleJump;
 
     public void Activate()
     {
@@ -18,6 +19,8 @@ public class StoryFlag : ScriptableObject
 
         if (PlatformingCharacterProperties != null)
             PlayerRefference.GameObject.GetComponent<PlatformingCharacter>().Properties = PlatformingCharacterProperties;
+        if (unlockDoubleJump)
+            PlayerRefference.GameObject.GetComponent<DoubleJump>().enabled = true;
     }
 
 }

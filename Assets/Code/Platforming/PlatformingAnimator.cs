@@ -19,10 +19,13 @@ public class PlatformingAnimator : MonoBehaviour
         Character.OnJump += PlatformingCharacter_OnJump;
         Character.OnStomp += (o) => PlatformingCharacter_OnJump();
         Character.OnWallJump += PlatformingCharacter_OnJump;
+        GetComponent<DoubleJump>().OnDoubleJump += PlatformingAnimator_OnDoubleJump;
         // Health = GetComponent<Health>();
         // Health.OnHurt += Health_OnHurt;
         // Health.OnKill += Health_OnKill;
     }
+
+
 
     private void Health_OnKill()
     {
@@ -48,7 +51,12 @@ public class PlatformingAnimator : MonoBehaviour
     {
         Animator.SetTrigger("Jump");
         JumpParticles.Play();
-        //AudioSource.PlayClipAtPoint(JumpSound, transform.position, 1f);
+        AudioPool.PlaySound(transform.position, JumpSound, volume: .45f, pitch: Random.value * .2f + .9f);
+    }
+
+    private void PlatformingAnimator_OnDoubleJump()
+    {
+        JumpParticles.Play();
         AudioPool.PlaySound(transform.position, JumpSound, volume: .45f, pitch: Random.value * .2f + .9f);
     }
 

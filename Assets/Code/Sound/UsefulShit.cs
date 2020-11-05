@@ -18,9 +18,9 @@ public static class UsefulShit
     public static void SetForward(this Transform t, float f)
     {
         if (f > 0)
-            t.eulerAngles = new Vector3(0f, 180f, 0f);
-        else if (f < 0)
             t.eulerAngles = new Vector3(0f, 0f, 0f);
+        else if (f < 0)
+            t.eulerAngles = new Vector3(0f, 180f, 0f);
     }
 
     static Camera main;

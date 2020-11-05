@@ -14,6 +14,8 @@ public class StageManager : MonoBehaviour
     Stage current;
     public StageData StartStage;
 
+    public AnimationCurve CameraTransitionCurve;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,7 @@ public class StageManager : MonoBehaviour
 
         for(float f = 0; f < 1f; f += Time.unscaledDeltaTime * 2f)
         {
-            CameraContainer.position = Vector2.Lerp(start, destination, f);
+            CameraContainer.position = Vector2.LerpUnclamped(start, destination, CameraTransitionCurve.Evaluate(f));
             yield return null;
         }
 

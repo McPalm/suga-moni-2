@@ -54,6 +54,16 @@ public class PlatformingCharacter : Mobile, IInputReader
         cyoteTime = data.cyoteTime;
         if (data.jumpConsumed)
             InputToken.ConsumeJump();
+        foreach(var tech in GetComponents<IPlatformingTechnique>())
+        {
+            if (tech.Enabled)
+            {
+                data = tech.SimulateFrame(InputToken.GetSnapshot(), cyoteTime);
+                if (data.jumpConsumed)
+                    InputToken.ConsumeJump();
+                cyoteTime = data.cyoteTime;
+            }
+        }
     }
 
     public void Resimulate(float time, Vector2 from, bool stomp = false)
@@ -81,6 +91,8 @@ public class PlatformingCharacter : Mobile, IInputReader
         }
     }
 
+    public bool ForceJumpUntillPeak { get; set; }
+
     public (bool jumpConsumed, int cyoteTime) SimulateFrame(InputSnapshot input, int cyoteTime)
     {
         bool jumpConsumed = false;
@@ -92,7 +104,7 @@ public class PlatformingCharacter : Mobile, IInputReader
         var peakJump = (VMomentum < 1f && VMomentum > -1f) && !Grounded;
         var x = input.direction.x;
         var currentSpeed = Mathf.Abs(HMomentum);
-        bool jumpHeld = ForceJumpFrames > 0 || input.jumpHeld;
+        bool jumpHeld = ForceJumpFrames > 0 || input.jumpHeld || ForceJumpUntillPeak;
         if (ForceMoveFrames > 0)
             x = ForceMove.x;
 
@@ -106,6 +118,9 @@ public class PlatformingCharacter : Mobile, IInputReader
 
         // horiontal movement
         var desiredSpeed = x * Properties.MaxSpeed;
+        if (!Grounded && Mathf.Abs(HMomentum) > Properties.MaxSpeed && Mathf.Abs(x) > .75f && x == Mathf.Sign(HMomentum)) // do magic to perserve massive vertical momentum or something
+            desiredSpeed = HMomentum * .98f;
+
         var accelMultipler = 1f; //desiredSpeed == 0f && !Grounded ? .1f : 1f; // keep momentum in air if stick is neutral.
         accelMultipler *= Friction;
         if(lowStamina)
@@ -201,7 +216,7 @@ public class PlatformingCharacter : Mobile, IInputReader
             ForceMoveFrames = 5;
             lastWallJump = Time.timeSinceLevelLoad;
         }
-        else if (!Grounded && VMomentum < 0f && Properties.HeadBonkForce > 0f)
+        else if (!Grounded && VMomentum < 0f && Properties.HeadBonkForce > 0f) // STOMPing
         {
             // jump on player here
             var hits = Physics2D.BoxCastAll(
@@ -263,7 +278,8 @@ public class PlatformingCharacter : Mobile, IInputReader
         else
             Gravity = Properties.Gravity;
 
-
+        if (VMomentum < 0f || Grounded)
+            ForceJumpUntillPeak = false;
 
         base.FixedUpdate();
 
@@ -305,5 +321,11 @@ public class PlatformingCharacter : Mobile, IInputReader
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(duration);
         Time.timeScale = 1f;
+    }
+
+    public interface IPlatformingTechnique
+    {
+        bool Enabled { get; }
+        (bool jumpConsumed, int cyoteTime) SimulateFrame(InputSnapshot input, int cyoteTime);
     }
 }

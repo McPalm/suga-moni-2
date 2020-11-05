@@ -2498,7 +2498,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b2a0f2cbf4a004f89edf740b5fd310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Thats all we got so far! Good job.
+  text: 'Double jump Unlocked!
+
+    You can now perform an aextra jump mid air.
+
+    Recovers
+    if you jump on an enemy.'
 --- !u!114 &1155107965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,7 +2516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f79c17bbb9905a4f810c3ffb282749c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyFlag: {fileID: 11400000, guid: 8749898ad20317340906c3131d85a8d1, type: 2}
+  storyFlag: {fileID: 11400000, guid: 5367557211926ab4e9324beb0e94bdb5, type: 2}
   audioClip: {fileID: 8300000, guid: 59824f7024a233540a2fb637b2493571, type: 3}
 --- !u!212 &1155107966
 SpriteRenderer:
