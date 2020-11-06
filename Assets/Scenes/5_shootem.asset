@@ -16,3 +16,4 @@ MonoBehaviour:
   nearbyStages:
   - {fileID: 11400000, guid: 5a8577f4e5294ed43bfad15bbb811ed1, type: 2}
   - {fileID: 11400000, guid: 11268118dd2a3144582151d1476da4eb, type: 2}
+  - {fileID: 11400000, guid: 324da8a4cbe84884eae2a37af4a6e440, type: 2}

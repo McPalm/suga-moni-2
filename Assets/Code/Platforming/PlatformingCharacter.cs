@@ -236,11 +236,19 @@ public class PlatformingCharacter : Mobile, IInputReader
 
                         VMomentum = Properties.HeadBonkForce;
                         var other = hit.transform.GetComponent<PlatformingCharacter>();
-                        other.VMomentum = Mathf.Min(VMomentum - Properties.HeadBonkForce, -Properties.HeadBonkForce);
+                        if(other)
+                        {
+                            other.VMomentum = Mathf.Min(VMomentum - Properties.HeadBonkForce, -Properties.HeadBonkForce);
+                        }
+                        foreach(var stompable in hit.collider.GetComponents<IStompable>())
+                        {
+                            stompable.Stomp(this);
+                        }
                         OnStomp?.Invoke(other);
-                        ForceJumpFrames = 8;
-                        StartCoroutine(Freeze(.075f));
-                        other.OnStomped?.Invoke(this);
+                        ForceJumpFrames = 4;
+                        jumpHeld = true;
+                        StartCoroutine(Freeze(.05f));
+                        other?.OnStomped?.Invoke(this);
                         break;
                     }
                 }
@@ -320,6 +328,12 @@ public class PlatformingCharacter : Mobile, IInputReader
     {
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = .25f;
+        yield return new WaitForFixedUpdate();
+        Time.timeScale = .5f;
+        yield return new WaitForFixedUpdate();
+        Time.timeScale = .75f;
+        yield return new WaitForFixedUpdate();
         Time.timeScale = 1f;
     }
 
@@ -327,5 +341,10 @@ public class PlatformingCharacter : Mobile, IInputReader
     {
         bool Enabled { get; }
         (bool jumpConsumed, int cyoteTime) SimulateFrame(InputSnapshot input, int cyoteTime);
+    }
+
+    public interface IStompable
+    {
+        void Stomp(PlatformingCharacter source);
     }
 }

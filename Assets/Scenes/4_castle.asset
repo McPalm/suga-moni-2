@@ -15,3 +15,4 @@ MonoBehaviour:
   Scene: 4_Castle
   nearbyStages:
   - {fileID: 11400000, guid: 8418b124d2e4dec42b587618f39bd6a1, type: 2}
+  - {fileID: 11400000, guid: 3b768e336c823a44781c533a6c948849, type: 2}

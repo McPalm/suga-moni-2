@@ -20,6 +20,18 @@ TextureImporter:
   - first:
       213: -1393657300792485636
     second: SugaMoni_5
+  - first:
+      213: 8352154451592128306
+    second: SugaMoni_6
+  - first:
+      213: 4953127293549564285
+    second: SugaMoni_7
+  - first:
+      213: 7465800283852890371
+    second: SugaMoni_8
+  - first:
+      213: 6866805475278812485
+    second: SugaMoni_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -240,6 +252,90 @@ TextureImporter:
       bones: []
       spriteID: cf852af911cb8ace0800000000000000
       internalID: -1393657300792485636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SugaMoni_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237a85cd830d8e370800000000000000
+      internalID: 8352154451592128306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SugaMoni_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71505bd70b0db440800000000000000
+      internalID: 4953127293549564285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SugaMoni_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301ef0b7dc9db9760800000000000000
+      internalID: 7465800283852890371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SugaMoni_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54573b7a23bcb4f50800000000000000
+      internalID: 6866805475278812485
       vertices: []
       indices: 
       edges: []

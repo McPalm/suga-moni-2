@@ -26,5 +26,6 @@ public class FlagPickup : MonoBehaviour
         OnTrigger?.Invoke();
         Destroy(gameObject);
         this.Noise(audioClip);
+        FindObjectOfType<StageManager>().Save();
     }
 }

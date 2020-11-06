@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Stage : MonoBehaviour
 {
+    public StageData stageData;
+
     public void ResetStage()
     {
         foreach(var director in GetComponentsInChildren<PlayableDirector>())

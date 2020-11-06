@@ -9,21 +9,41 @@ public class StageManager : MonoBehaviour
 {
     public Transform CameraContainer;
 
+    public PlatformingCharacter Player;
 
     public StageData[] Stages;
     Stage current;
     public StageData StartStage;
+    public SaveManager SaveManager;
 
     public AnimationCurve CameraTransitionCurve;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
         FindObjectOfType<KillPlayer>().OnReset += StageManager_OnReset;
-        foreach (var stage in Stages)
+
+        if (PlayerPrefs.GetString("LoadMode") == "LoadGame")
+        {
+            var startStage = SaveManager.Load(this);
+            if (startStage != null)
+                StartStage = startStage;
+        }
+
+        Debug.Log("Loading...");
+        StartStage.Load();
+        while (StartStage.IsLoaded == false)
+            yield return null;
+        Debug.Log("Loaded");
+        current = FindObjectOfType<Stage>();
+        var cp = current.GetComponentInChildren<CheckPoint>();
+        if (cp)
+            Player.transform.position = cp.transform.position + Vector3.up;
+        CameraContainer.transform.position = current.transform.position;
+        yield return new WaitForSeconds(.5f);
+        foreach(var stage in StartStage.nearbyStages)
         {
             stage.Load();
-            // SceneManager.LoadScene(stage, LoadSceneMode.Additive);
         }
     }
 
@@ -34,6 +54,10 @@ public class StageManager : MonoBehaviour
         if(current != stage)
         {
             StartCoroutine(AnimateTransition(stage));
+            foreach(var neighbor in stage.stageData.nearbyStages)
+            {
+                neighbor.Load();
+            }
         }
     }
 
@@ -53,12 +77,18 @@ public class StageManager : MonoBehaviour
         CameraContainer.position = destination;
 
         current = stage;
+
         Time.timeScale = 1f;
     }
 
     private void StageManager_OnReset()
     {
         current?.ResetStage();
+    }
+
+    public void Save()
+    {
+        SaveManager.Save(this);
     }
 
 }

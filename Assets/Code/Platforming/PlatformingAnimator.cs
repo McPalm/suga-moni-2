@@ -56,6 +56,7 @@ public class PlatformingAnimator : MonoBehaviour
 
     private void PlatformingAnimator_OnDoubleJump()
     {
+        Animator.SetTrigger("DoubleJump");
         JumpParticles.Play();
         AudioPool.PlaySound(transform.position, JumpSound, volume: .45f, pitch: Random.value * .2f + .9f);
     }

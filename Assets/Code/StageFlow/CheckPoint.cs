@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    static CheckPoint lastCP;
+    static public CheckPoint lastCP { get; private set; }
 
     public AudioClip audioClip;
 
@@ -23,9 +23,11 @@ public class CheckPoint : MonoBehaviour
         if (lastCP == this)
             return;
         AudioPool.PlaySound(transform.position, audioClip);
-        lastCP?.DeactivateCP();
+        if(lastCP)
+            lastCP.DeactivateCP();
         lastCP = this;
         GetComponent<Animator>().SetBool("On", true);
+        FindObjectOfType<StageManager>().Save();
     }
 
     public void DeactivateCP()
