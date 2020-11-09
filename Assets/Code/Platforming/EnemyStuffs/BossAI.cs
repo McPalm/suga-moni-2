@@ -29,6 +29,8 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
     public PlayableDirector Anvil;
     public PlayableDirector Credits;
 
+    Vector2 target;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,11 +59,12 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
             yield return MoveTo(RightSide.transform.position);
             transform.SetForward(-1f);
         }
-
+        Aim(1f);
     fireball:
         r+= 2;
         for (int i = 0; i < 4 + phase; i++)
         {
+            Aim(.7f - phase * .1f);
             if (SqrDistanceToplayer < 16f)
                 goto juke;
             if (i == r % (4 + phase))
@@ -71,6 +74,7 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
             yield return new WaitForSeconds(.3f - phase * .08f);
         }
 
+        Aim(.5f);
         yield return new WaitForSeconds(.9f - phase * .05f);
         goto fireball;
     juke:
@@ -101,9 +105,14 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
         yield return CreditRoll();
     }
 
+    void Aim(float ammount)
+    {
+        target = Vector2.Lerp(target, Player.GameObject.transform.position, ammount);
+    }
+
     void ShootFireball()
     {
-        var playerPosition = Player.GameObject.transform.position;
+        Vector3 playerPosition = target;
 
         this.Noise(FireballNoise, volume: .75f);
         playerPosition += Vector3.down * hits * .5f;
@@ -113,7 +122,7 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
 
     void ShootPig()
     {
-        var playerPosition = Player.GameObject.transform.position;
+        Vector3 playerPosition = target;
         playerPosition += Vector3.up * hits * .1f;
 
         this.Noise(FireballNoise, volume: .75f);
