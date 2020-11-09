@@ -4870,6 +4870,7 @@ MonoBehaviour:
   ChargeParticles: {fileID: 8296211242290161488}
   ChargeSound: {fileID: 8300000, guid: 59824f7024a233540a2fb637b2493571, type: 3}
   Anvil: {fileID: 0}
+  Credits: {fileID: 0}
 --- !u!95 &4439102667074532158
 Animator:
   serializedVersion: 3
@@ -4918,7 +4919,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
