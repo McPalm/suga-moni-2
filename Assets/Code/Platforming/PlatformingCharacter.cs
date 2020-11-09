@@ -28,6 +28,7 @@ public class PlatformingCharacter : Mobile, IInputReader
     public bool WallSliding => VMomentum < 0f && wallSlideTime > 0;
     bool Rooted => rootDuration > 0;
     public bool CanWallJump => Properties.WalljumpForce > 0f && !Grounded && (wallSlideTime > 0 || TouchingWall ) && !lowStamina && !Rooted;
+    float lastTouchingWallDirection = 0;
     float TimeSinceLastWalljump => Time.timeSinceLevelLoad - lastWallJump;
 
     public bool lowStamina = false;
@@ -158,6 +159,9 @@ public class PlatformingCharacter : Mobile, IInputReader
         else
             cyoteTime--;
 
+        if (TouchingWall)
+            lastTouchingWallDirection = TouchingWallDirection;
+
         // climbing
         if(!lowStamina && InputToken.ClimbHeld && Properties.ClimbSpeed > 0f && !Grounded && TouchingWall && !Rooted)
         {
@@ -204,8 +208,10 @@ public class PlatformingCharacter : Mobile, IInputReader
         }
         else if(input.jumpBufferTimer >= 0f && CanWallJump) // Walljump
         {
-            if(TouchingWall)
+            if (TouchingWall)
                 FaceRight = TouchingWallDirection < 0;
+            else
+                FaceRight = lastTouchingWallDirection < 0;
             VMomentum = Properties.WalljumpForce;
             HMomentum = Properties.WallpushForce * Forward;
 
