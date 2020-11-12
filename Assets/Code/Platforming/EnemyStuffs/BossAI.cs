@@ -41,6 +41,7 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
     IEnumerator Routine(int phase)
     {
         int r = 3;
+        int r2 = 4;
         if (phase == 0)
         {
             transform.position = spawn;
@@ -61,13 +62,14 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
         }
         Aim(1f);
     fireball:
-        r+= 2;
+        r += 2;
+        r2 += Random.Range(3, 6);
         for (int i = 0; i < 4 + phase; i++)
         {
             Aim(.7f - phase * .1f);
             if (SqrDistanceToplayer < 16f)
                 goto juke;
-            if (i == r % (4 + phase))
+            if (i == r % (4 + phase) || i == r2 % (4 + phase))
                 ShootPig();
             else
                 ShootFireball();
@@ -86,6 +88,7 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
 
     IEnumerator KillMe()
     {
+        var music = FindObjectOfType<MusicPlayer>();
         yield return MoveTo(RightSide.position + Vector3.right);
         transform.SetForward(-1);
         yield return new WaitForSeconds(.2f);
@@ -99,6 +102,7 @@ public class BossAI : MonoBehaviour, IOnStageReset, PlatformingCharacter.IStompa
         KillParticles.Play();
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         Time.timeScale = 0f;
+        music.StopMusic();
         yield return new WaitForSecondsRealtime(.2f);
         Time.timeScale = 1f;
         yield return new WaitForSeconds(1f);
